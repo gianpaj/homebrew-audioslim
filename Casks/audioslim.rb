@@ -11,6 +11,11 @@ cask "audioslim" do
 
   app "AudioSlim.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/AudioSlim.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/AudioSlim",
     "~/Library/Preferences/com.audioslim.*",
