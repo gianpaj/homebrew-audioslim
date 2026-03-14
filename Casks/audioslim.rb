@@ -1,6 +1,6 @@
 cask "audioslim" do
   version "0.2.0"
-  sha256 "d98fe3e5ffb825953299c4f8b9bfd758d5114c5cce5ad95b054c0c70e8c8d124"
+  sha256 "a512f25324d60ce26007bdb8b0ef6232819a97d360078a0ed6124772fa67e3fe"
 
   url "https://github.com/gianpaj/audioslim/releases/download/#{version}/stable-macos-arm64-audioslim.dmg"
   name "AudioSlim"
