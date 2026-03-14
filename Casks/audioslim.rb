@@ -1,23 +1,23 @@
 cask "audioslim" do
-  version "0.1.0"
-  sha256 "f1fb119ede27d16462e36db3c7027ad07227d169c0f4905d798fc2ce54729f6b"
+  version "0.2.0"
+  sha256 "d98fe3e5ffb825953299c4f8b9bfd758d5114c5cce5ad95b054c0c70e8c8d124"
 
-  url "https://github.com/gianpaj/audioslim/releases/download/#{version}/AudioSlim_#{version}_aarch64.dmg"
+  url "https://github.com/gianpaj/audioslim/releases/download/#{version}/stable-macos-arm64-audioslim.dmg"
   name "AudioSlim"
   desc "Compress audio files using FFmpeg"
   homepage "https://github.com/gianpaj/audioslim"
 
   depends_on arch: :arm64
 
-  app "AudioSlim.app"
+  app "audioslim.app"
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/AudioSlim.app"]
+                   args: ["-cr", "#{appdir}/audioslim.app"]
   end
 
   zap trash: [
-    "~/Library/Application Support/AudioSlim",
-    "~/Library/Preferences/com.audioslim.*",
+    "~/Library/Application Support/audioslim",
+    "~/Library/Preferences/it.gianpaolo.audioslim.*",
   ]
 end
