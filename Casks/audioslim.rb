@@ -11,9 +11,8 @@ cask "audioslim" do
 
   app "audioslim.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/audioslim.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/audioslim.app"]
   end
 
   zap trash: [
